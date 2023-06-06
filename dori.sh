@@ -24,14 +24,22 @@ fi
 
 operation=$1
 
-if [ "$operation" == "update" ]; then
+function update() {
     # shellcheck disable=SC2207
     images=($(python -c "$code"))
     for image in "${images[@]}"; do
         echo -e "Pulling image $LIGHTGREEN$image$RESET"
         docker image pull "$image"
     done
-elif [ "$operation" == "reload" ]; then
+}
+
+function reload() {
     docker compose down
     docker compose up -d
+}
+
+if [ "$operation" == "update" ]; then
+    update
+elif [ "$operation" == "reload" ]; then
+    reload
 fi
