@@ -38,8 +38,16 @@ function reload() {
     docker compose up -d
 }
 
+function update() {
+    docker compose down
+    latest
+    docker compose up -d
+}
+
 if [ "$operation" == "latest" ]; then
     latest
 elif [ "$operation" == "reload" ]; then
     reload
+elif [ "$operation" == "update" ]; then
+    update
 fi
