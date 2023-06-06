@@ -1,5 +1,5 @@
 pkgname=dori
-pkgver=r1.7c3040d
+pkgver=r10.6ffadd1
 pkgrel=1
 pkgdesc="Easy to use shortcuts for Docker and Docker Compose"
 arch=("any")
