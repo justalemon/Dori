@@ -24,7 +24,7 @@ fi
 
 operation=$1
 
-function update() {
+function latest() {
     # shellcheck disable=SC2207
     images=($(python -c "$code"))
     for image in "${images[@]}"; do
@@ -38,8 +38,8 @@ function reload() {
     docker compose up -d
 }
 
-if [ "$operation" == "update" ]; then
-    update
+if [ "$operation" == "latest" ]; then
+    latest
 elif [ "$operation" == "reload" ]; then
     reload
 fi
