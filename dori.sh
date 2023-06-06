@@ -31,4 +31,7 @@ if [ "$operation" == "update" ]; then
         echo -e "Pulling image $LIGHTGREEN$image$RESET"
         docker image pull "$image"
     done
+elif [ "$operation" == "reload" ]; then
+    docker compose down
+    docker compose up -d
 fi
