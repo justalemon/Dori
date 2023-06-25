@@ -18,7 +18,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: pacman -Syu --noconfirm base-devel git
-      - run: makepkg -sf
+      - run: makepkg -sf --noconfirm
         env:
           EUID: "1"
       - uses: actions/upload-artifact@v3
