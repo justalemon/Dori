@@ -41,6 +41,7 @@ function reload() {
 function update() {
     docker compose down
     latest
+    docker compose build --no-cache
     docker compose up -d
 }
 
